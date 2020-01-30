@@ -13,7 +13,7 @@ void setup()
 
 void loop()
 {
-  A4988.Rotate(10, 20, -5);
+  A4988.Rotate(2, 2, -1);
   delay(1000);
 }
 
