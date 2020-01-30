@@ -128,14 +128,14 @@ void KL::Rotate(int x, int y, int z)
   }
   else if((stp[1] >= stp[2]) && (stp[1] >= stp[3]))
   {
-    r[0] = (stp[0] * period) / stp[0];
+    r[0] = (stp[1] * period) / stp[0];
     r[1] = period;
-    r[2] = (stp[0] * period) / stp[2];
+    r[2] = (stp[1] * period) / stp[2];
   }
   else
   {
-    r[0] = (stp[0] * period) / stp[0];
-    r[1] = (stp[0] * period) / stp[1];
+    r[0] = (stp[2] * period) / stp[0];
+    r[1] = (stp[2] * period) / stp[1];
     r[2] = period;
   }
 
