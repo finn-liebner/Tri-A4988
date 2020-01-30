@@ -120,13 +120,13 @@ void KL::Rotate(int x, int y, int z)
     digitalWrite(DIR_Z, 1);
   }
 
-  if((stp[0] > stp[1]) && (stp[0] > stp[2]))
+  if((stp[0] >= stp[1]) && (stp[0] >= stp[2]))
   {
     r[0] = period;
     r[1] = (stp[0] * period) / stp[1];
     r[2] = (stp[0] * period) / stp[2];
   }
-  else if((stp[1] > stp[2]) && (stp[1] > stp[3]))
+  else if((stp[1] >= stp[2]) && (stp[1] >= stp[3]))
   {
     r[0] = (stp[0] * period) / stp[0];
     r[1] = period;
@@ -148,7 +148,7 @@ void KL::Rotate(int x, int y, int z)
 
   while(cnt[0] != cnt[1])
   {
-    if(t[0] <= micros())
+    if(t[0] < micros())
     {
       digitalWrite(STP_X, s[0]);
       t[0] = t[0] + r[0];
@@ -156,7 +156,7 @@ void KL::Rotate(int x, int y, int z)
       cnt[1]++;
     }
 
-    if(t[1] <= micros())
+    if(t[1] < micros())
     {
       digitalWrite(STP_Y, s[1]);
       t[1] = t[1] + r[1];
@@ -164,7 +164,7 @@ void KL::Rotate(int x, int y, int z)
       cnt[1]++;
     }
 
-    if(t[2] <= micros())
+    if(t[2] < micros())
     {
       digitalWrite(STP_Z, s[2]);
       t[2] = t[2] + r[2];
