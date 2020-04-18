@@ -4,6 +4,8 @@
 
 Diese Bibliothek ermöglicht es, drei Schrittmotoren mit A4988-Treibern gleichzeitig und synchron zueinander anzusteuern. Die Bibliothek ist für die Verwendung mit der Arduino-IDE geschrieben und wurde unter der IDE-Version 1.8.9 getestet.
 
+Hinweis (To-do) - Die Bibliothek blockiert den Prozessor, während die Schrittmotoren angesteuert werden. Dies ließe sich optimieren, indem Timerinterrupts genutzt werden (die Nutzung von Timerinterrupts ist jedoch von Microcontroller zu Microcontroller unterschiedlich, weil die vorhandene Timerhardware variiert und unterschiedlich genaue Zeitauflösung bietet - diese Bibliothek ist dafür aber universell einsetzbar, sie läuft auf einem Arduino Uno genauso wie auf einem STM Nucleo F429ZI...).
+
 ---
 
 ### Befehlübersicht
